@@ -2,11 +2,15 @@ package com.hongtu.wf.demo;
 
 import com.hongtu.wf.demo.model.Customer;
 import com.hongtu.wf.demo.service.CustomerService;
+import com.sun.xml.internal.ws.api.handler.MessageHandlerContext;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Objects;
 
 
 /**
@@ -32,10 +36,37 @@ public class CustomerServiceTest {
     }
 
     @Test
-    private void getCustomerTest() {
+    public void getCustomerTest() {
         long id = 1;
         Customer customer = customerService.getCustomer(id);
         Assert.assertNotNull(customer);
     }
+
+    @Test
+    public void createCustomerTest() throws Exception {
+        Map<String, Object> fieldMap = new HashMap<String, Object>();
+        fieldMap.put("name", "customer100");
+        fieldMap.put("contact", "John");
+        fieldMap.put("telephone", "13512345678");
+        boolean result = customerService.createCustomer(fieldMap);
+        Assert.assertTrue(result);
+    }
+
+    @Test
+    public void updateCustomerTest() throws Exception {
+        long id = 1;
+        Map<String, Object> fieldMap = new HashMap<String, Object>();
+        fieldMap.put("contact", "Eric");
+        boolean result = customerService.updateCustomer(id, fieldMap);
+        Assert.assertTrue(result);
+    }
+
+    @Test
+    public void deleteCustomerTest() throws Exception {
+        long id = 1;
+        boolean result = customerService.deleteCustomer(id);
+        Assert.assertTrue(result);
+    }
+
 
 }
