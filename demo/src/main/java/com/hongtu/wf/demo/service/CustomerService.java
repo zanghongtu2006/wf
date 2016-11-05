@@ -25,18 +25,19 @@ public class CustomerService {
     }
 
     public Customer getCustomer(Long id) {
-        return null;
+        String sql = "SELECT * FROM customer where id=" + id;
+        return DatabaseHelper.queryEntity(Customer.class, sql);
     }
 
     public boolean createCustomer(Map<String, Object> fields) {
-        return false;
+        return DatabaseHelper.insertEntity(Customer.class, fields);
     }
 
     public boolean updateCustomer(Long id, Map<String, Object> fields) {
-        return false;
+        return DatabaseHelper.updateEntity(Customer.class, id, fields);
     }
 
     public boolean deleteCustomer(Long id) {
-        return false;
+        return DatabaseHelper.deleteEntity(Customer.class, id);
     }
 }
