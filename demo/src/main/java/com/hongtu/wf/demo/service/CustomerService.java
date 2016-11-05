@@ -20,13 +20,8 @@ public class CustomerService {
     private static final Logger _logger = LoggerFactory.getLogger(CustomerService.class);
 
     public List<Customer> getCustomerList(String keyword) {
-        Connection conn = DatabaseHelper.getConnection();
-        try {
-            String sql = "SELECT * FROM customer";
-            return DatabaseHelper.queryEntityList(Customer.class, conn, sql);
-        } finally {
-            DatabaseHelper.closeConnection(conn);
-        }
+        String sql = "SELECT * FROM customer";
+        return DatabaseHelper.queryEntityList(Customer.class, sql);
     }
 
     public Customer getCustomer(Long id) {
