@@ -1,10 +1,5 @@
 package com.hongtu.wf.demo.utils;
 
-import org.apache.commons.lang3.BooleanUtils;
-import org.apache.commons.lang3.StringUtils;
-
-import java.util.Objects;
-
 /**
  * Created by hongtu on 16-10-29.
  */

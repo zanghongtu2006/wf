@@ -3,19 +3,14 @@ package com.hongtu.wf.demo;
 import com.hongtu.wf.demo.helper.DatabaseHelper;
 import com.hongtu.wf.demo.model.Customer;
 import com.hongtu.wf.demo.service.CustomerService;
-import com.sun.xml.internal.ws.api.handler.MessageHandlerContext;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 
 
 /**
@@ -36,7 +31,7 @@ public class CustomerServiceTest {
 
     @Test
     public void getCustomerListTest() {
-        List<Customer> customerList = customerService.getCustomerList("");
+        List<Customer> customerList = customerService.getCustomerList();
         Assert.assertEquals(2, customerList.size());
     }
 
