@@ -178,10 +178,20 @@ public final class DatabaseHelper {
         return executeUpdate(sql, id) == 1;
     }
 
+    /**
+     * return tableName which is the Class Name
+     * @param entityClass
+     * @param <T>
+     * @return
+     */
     private static <T> String getTableName(Class<T> entityClass) {
         return entityClass.getSimpleName();
     }
 
+    /**
+     * execute all sql in a file
+     * @param filePath
+     */
     public static void executeSqlFile(String filePath) {
         InputStream is = Thread.currentThread().getContextClassLoader().getResourceAsStream(filePath);
         BufferedReader reader = new BufferedReader(new InputStreamReader(is));
