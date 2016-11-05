@@ -20,30 +20,13 @@ public class CustomerService {
     private static final Logger _logger = LoggerFactory.getLogger(CustomerService.class);
 
     public List<Customer> getCustomerList(String keyword) {
-        Connection conn = null;
+        Connection conn = DatabaseHelper.getConnection();
         try {
-            List<Customer> customerList = new ArrayList<Customer>();
             String sql = "SELECT * FROM customer";
-            conn = DatabaseHelper.getConnection();
-            PreparedStatement stmt = conn.prepareStatement(sql);
-            ResultSet rs = stmt.executeQuery();
-            while (rs.next()) {
-                Customer customer = new Customer();
-                customer.setId(rs.getLong("id"));
-                customer.setName(rs.getString("name"));
-                customer.setContact(rs.getString("contact"));
-                customer.setTelephone(rs.getString("telephone"));
-                customer.setEmail(rs.getString("email"));
-                customer.setRemark(rs.getString("remark"));
-                customerList.add(customer);
-            }
-            return customerList;
-        } catch (SQLException e) {
-            _logger.error("get customer failed ", e);
+            return DatabaseHelper.queryEntityList(Customer.class, conn, sql);
         } finally {
             DatabaseHelper.closeConnection(conn);
         }
-        return null;
     }
 
     public Customer getCustomer(Long id) {
