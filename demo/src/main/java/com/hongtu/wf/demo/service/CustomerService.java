@@ -19,7 +19,7 @@ import java.util.Properties;
 public class CustomerService {
     private static final Logger _logger = LoggerFactory.getLogger(CustomerService.class);
 
-    public List<Customer> getCustomerList(String keyword) {
+    public List<Customer> getCustomerList() {
         String sql = "SELECT * FROM Customer";
         return DatabaseHelper.queryEntityList(Customer.class, sql);
     }
