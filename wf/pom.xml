@@ -20,14 +20,12 @@
             <groupId>javax.servlet.jsp</groupId>
             <artifactId>jsp-api</artifactId>
             <version>2.2</version>
-            <scope>provided</scope>
         </dependency>
         <!--JSTL-->
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>jstl</artifactId>
             <version>1.2</version>
-            <scope>runtime</scope>
         </dependency>
         <!-- LOG-->
         <dependency>
