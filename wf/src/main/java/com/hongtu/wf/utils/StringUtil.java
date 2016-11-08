@@ -1,4 +1,4 @@
-package com.hongtu.wf.demo.utils;
+package com.hongtu.wf.utils;
 
 import org.apache.commons.lang3.StringUtils;
 
