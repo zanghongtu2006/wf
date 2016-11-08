@@ -1,7 +1,8 @@
-package com.hongtu.wf.demo.helper;
+package com.hongtu.wf.helper;
 
-import com.hongtu.wf.demo.utils.ConfigConstant;
-import com.hongtu.wf.demo.utils.PropsUtil;
+
+import com.hongtu.wf.utils.ConfigConstant;
+import com.hongtu.wf.utils.PropsUtil;
 
 import java.util.Properties;
 

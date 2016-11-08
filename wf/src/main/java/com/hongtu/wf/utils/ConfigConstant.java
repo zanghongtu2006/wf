@@ -1,4 +1,4 @@
-package com.hongtu.wf.demo.utils;
+package com.hongtu.wf.utils;
 
 /**
  * Created by hongtu on 16-11-7.

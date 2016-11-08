@@ -2,16 +2,11 @@ package com.hongtu.wf.demo.service;
 
 import com.hongtu.wf.demo.helper.DatabaseHelper;
 import com.hongtu.wf.demo.model.Customer;
-import com.hongtu.wf.demo.utils.PropsUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.net.ConnectException;
-import java.sql.*;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.Properties;
 
 /**
  * Created by hongtu on 2016/10/21.

@@ -1,7 +1,7 @@
 package com.hongtu.wf.demo.helper;
 
 import com.hongtu.wf.demo.utils.CollectionUtil;
-import com.hongtu.wf.demo.utils.PropsUtil;
+import com.hongtu.wf.utils.PropsUtil;
 import org.apache.commons.dbcp2.BasicDataSource;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanHandler;

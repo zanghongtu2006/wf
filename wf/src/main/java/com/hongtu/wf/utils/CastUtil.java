@@ -1,6 +1,4 @@
-package com.hongtu.wf.demo.utils;
-
-import com.hongtu.wf.utils.StringUtil;
+package com.hongtu.wf.utils;
 
 /**
  * Created by hongtu on 16-10-29.
