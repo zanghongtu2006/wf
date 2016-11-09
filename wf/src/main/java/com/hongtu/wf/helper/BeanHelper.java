@@ -1,6 +1,7 @@
-package com.hongtu.wf.utils;
+package com.hongtu.wf.helper;
 
 import com.hongtu.wf.helper.ClassHelper;
+import com.hongtu.wf.utils.ReflectionUtil;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -10,7 +11,7 @@ import java.util.Set;
  * simple bean container, init all services and controllers
  * Created by hongtu on 16-11-9.
  */
-public class BeanHelper {
+public final class BeanHelper {
     private static final Map<Class<?>, Object> BEAN_MAP = new HashMap<Class<?>, Object>();
 
     static {

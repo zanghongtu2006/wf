@@ -1,11 +1,10 @@
 package com.hongtu.wf.helper;
 
-import com.hongtu.wf.annotation.Action;
+import com.hongtu.wf.ConfigHelper;
 import com.hongtu.wf.annotation.Controller;
 import com.hongtu.wf.annotation.Service;
 import com.hongtu.wf.utils.ClassUtil;
 
-import java.sql.Connection;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -13,7 +12,7 @@ import java.util.Set;
  * load all classes under config.properties
  * Created by hongtu on 16-11-8.
  */
-public class ClassHelper {
+public final class ClassHelper {
     private static final Set<Class<?>> CLASS_SET;
 
     static {

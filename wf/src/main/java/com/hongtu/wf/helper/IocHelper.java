@@ -2,7 +2,6 @@ package com.hongtu.wf.helper;
 
 import com.hongtu.wf.annotation.Inject;
 import com.hongtu.wf.utils.ArrayUtil;
-import com.hongtu.wf.utils.BeanHelper;
 import com.hongtu.wf.utils.CollectionUtil;
 import com.hongtu.wf.utils.ReflectionUtil;
 
@@ -12,7 +11,7 @@ import java.util.Map;
 /**
  * Created by hongtu on 16-11-9.
  */
-public class IocHelper {
+public final class IocHelper {
     static {
         Map<Class<?>, Object> beanMap = BeanHelper.getBeanMap();
         if (CollectionUtil.isEmpty(beanMap)) {
