@@ -18,7 +18,7 @@ public final class IocHelper {
             for (Map.Entry<Class<?>, Object> beanEntity : beanMap.entrySet()) {
                 Class<?> beanClass = beanEntity.getKey();
                 Object beanInstance = beanEntity.getValue();
-                Field[] beanFields = beanClass.getFields();
+                Field[] beanFields = beanClass.getDeclaredFields();
                 if (ArrayUtil.isNotEmpty(beanFields)) {
                     for (Field beanField : beanFields) {
                         if (beanField.isAnnotationPresent(Inject.class)) {
