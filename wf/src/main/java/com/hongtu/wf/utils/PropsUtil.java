@@ -17,6 +17,7 @@ public class PropsUtil {
 
     /**
      * load properties file
+     *
      * @param fileName
      * @return
      */
@@ -48,6 +49,7 @@ public class PropsUtil {
 
     /**
      * get String property, default is ""
+     *
      * @param props
      * @param key
      * @return
@@ -58,6 +60,7 @@ public class PropsUtil {
 
     /**
      * get String prpoerty, default is [defaultValue]
+     *
      * @param props
      * @param key
      * @param defaultValue
@@ -65,7 +68,7 @@ public class PropsUtil {
      */
     public static String getString(Properties props, String key, String defaultValue) {
         String value = defaultValue;
-        if (props.contains(key)) {
+        if (props.containsKey(key)) {
             value = props.getProperty(key);
         }
         return value;
@@ -73,6 +76,7 @@ public class PropsUtil {
 
     /**
      * get int property, default is 0
+     *
      * @param props
      * @param key
      * @return
@@ -83,6 +87,7 @@ public class PropsUtil {
 
     /**
      * get int property, default [defaultValue]
+     *
      * @param props
      * @param key
      * @param defaultValue
@@ -98,6 +103,7 @@ public class PropsUtil {
 
     /**
      * get boolean property, default false
+     *
      * @param props
      * @param key
      * @return
@@ -108,6 +114,7 @@ public class PropsUtil {
 
     /**
      * get boolean property, default [defaultValue]
+     *
      * @param props
      * @param key
      * @param defaultValue

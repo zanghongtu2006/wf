@@ -1,5 +1,6 @@
 package com.hongtu.wf.utils;
 
+import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.collections4.MapUtils;
 
 import java.util.Collection;
@@ -15,7 +16,7 @@ public class CollectionUtil {
      * @return
      */
     public static boolean isEmpty(Collection<?> collection) {
-        return CollectionUtil.isEmpty(collection);
+        return CollectionUtils.isEmpty(collection);
     }
 
     /**

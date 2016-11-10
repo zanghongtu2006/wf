@@ -7,7 +7,6 @@ import com.hongtu.wf.bean.View;
 import com.hongtu.wf.helper.BeanHelper;
 import com.hongtu.wf.helper.ControllerHelper;
 import com.hongtu.wf.utils.*;
-import org.apache.log4j.DailyRollingFileAppender;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletContext;

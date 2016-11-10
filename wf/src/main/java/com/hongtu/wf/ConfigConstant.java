@@ -14,5 +14,5 @@ public interface ConfigConstant {
 
     String APP_PACKAGE = "wf.app.base_package";
     String APP_JSP_PATH = "wf.app.jsp_path";
-    String APP_ASSET_PATH = "wf.app.asset";
+    String APP_ASSET_PATH = "wf.app.asset_path";
 }
