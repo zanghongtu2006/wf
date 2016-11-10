@@ -17,7 +17,7 @@ import java.util.List;
 public class CustomerController {
 
     @Inject
-    private CustomerService customerService;
+    public CustomerService customerService;
 
     @Action("get:/customer")
     public View index(Param param) {

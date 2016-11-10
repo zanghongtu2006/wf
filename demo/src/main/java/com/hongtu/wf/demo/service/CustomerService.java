@@ -1,5 +1,6 @@
 package com.hongtu.wf.demo.service;
 
+import com.hongtu.wf.annotation.Service;
 import com.hongtu.wf.demo.helper.DatabaseHelper;
 import com.hongtu.wf.demo.model.Customer;
 import org.slf4j.Logger;
@@ -11,6 +12,7 @@ import java.util.Map;
 /**
  * Created by hongtu on 2016/10/21.
  */
+@Service
 public class CustomerService {
     private static final Logger _logger = LoggerFactory.getLogger(CustomerService.class);
 

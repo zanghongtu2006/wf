@@ -14,7 +14,7 @@ import java.util.Map;
 public final class IocHelper {
     static {
         Map<Class<?>, Object> beanMap = BeanHelper.getBeanMap();
-        if (CollectionUtil.isEmpty(beanMap)) {
+        if (CollectionUtil.isNotEmpty(beanMap)) {
             for (Map.Entry<Class<?>, Object> beanEntity : beanMap.entrySet()) {
                 Class<?> beanClass = beanEntity.getKey();
                 Object beanInstance = beanEntity.getValue();
