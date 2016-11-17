@@ -32,7 +32,7 @@ public final class ControllerHelper {
                             if (mapping.matches("\\w+:/\\w*")) {
                                 String[] array = mapping.split(":");
                                 if (ArrayUtil.isNotEmpty(array) && array.length == 2) {
-                                    String requestMethod = array[0];//http,https...
+                                    String requestMethod = array[0];//get,post...
                                     String requestPath = array[1];
                                     Request request = new Request(requestMethod, requestPath);
                                     Handler handler = new Handler(controllerClass, method);
