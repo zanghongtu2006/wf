@@ -31,22 +31,24 @@ public final class ControllerHelper {
                     for (Method method : methods) {
                         if (method.isAnnotationPresent(Path.class)) {
                             Path action = method.getAnnotation(Path.class);
-                            String mapping = action.value();
-                            Handler handler = new Handler(controllerClass, method);
-                            if (mapping.matches("/\\w*")) {
-                                String requestPath = mapping;
-                                Request request = null;
-                                if (method.isAnnotationPresent(Get.class)) {
-                                    request = new Request("get", requestPath);
-                                }
-                                if (method.isAnnotationPresent(Post.class)) {
-                                    request = new Request("post", requestPath);
-                                }
-                                if (method.isAnnotationPresent(Delete.class)) {
-                                    request = new Request("delete", requestPath);
-                                }
-                                if (request != null) {
-                                    ACTION_MAP.put(request, handler);
+                            String[] mappings = action.value();
+                            for (String mapping : mappings) {
+                                Handler handler = new Handler(controllerClass, method);
+                                if (mapping.matches("/\\w*")) {
+                                    String requestPath = mapping;
+                                    Request request = null;
+                                    if (method.isAnnotationPresent(Get.class)) {
+                                        request = new Request("get", requestPath);
+                                    }
+                                    if (method.isAnnotationPresent(Post.class)) {
+                                        request = new Request("post", requestPath);
+                                    }
+                                    if (method.isAnnotationPresent(Delete.class)) {
+                                        request = new Request("delete", requestPath);
+                                    }
+                                    if (request != null) {
+                                        ACTION_MAP.put(request, handler);
+                                    }
                                 }
                             }
                         }
