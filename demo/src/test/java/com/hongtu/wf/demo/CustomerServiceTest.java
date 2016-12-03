@@ -1,6 +1,6 @@
 package com.hongtu.wf.demo;
 
-import com.hongtu.wf.demo.helper.DatabaseHelper;
+import com.hongtu.wf.helper.DatabaseHelper;
 import com.hongtu.wf.demo.model.Customer;
 import com.hongtu.wf.demo.service.CustomerService;
 import org.junit.Assert;

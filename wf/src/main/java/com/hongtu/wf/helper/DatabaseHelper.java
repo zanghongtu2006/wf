@@ -1,5 +1,6 @@
-package com.hongtu.wf.demo.helper;
+package com.hongtu.wf.helper;
 
+import com.hongtu.wf.annotation.Transaction;
 import com.hongtu.wf.utils.CollectionUtil;
 import com.hongtu.wf.utils.PropsUtil;
 import org.apache.commons.dbcp2.BasicDataSource;
@@ -204,4 +205,45 @@ public final class DatabaseHelper {
         }
     }
 
+    public static void beginTransaction() {
+        Connection conn = getConnection();
+        if (conn != null) {
+            try {
+                conn.setAutoCommit(false);
+            } catch (SQLException e) {
+                _logger.error("begin transaction failure", e);
+                throw new RuntimeException(e);
+            } finally {
+                CONNECTION_HOLDER.set(conn);
+            }
+        }
+    }
+
+    public static void commitTransaction() {
+        Connection conn = getConnection();
+        if (conn != null) {
+            try {
+                conn.commit();
+                conn.close();
+            } catch (SQLException e) {
+                _logger.error("commit transaction failure", e);
+            } finally {
+                CONNECTION_HOLDER.remove();
+            }
+        }
+    }
+
+    public static void rollbackTransaction() {
+        Connection conn = getConnection();
+        if (conn != null) {
+            try {
+                conn.rollback();
+                conn.close();
+            } catch (SQLException e) {
+                _logger.error("roll back transaction failure", e);
+            } finally {
+                CONNECTION_HOLDER.remove();
+            }
+        }
+    }
 }

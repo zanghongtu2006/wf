@@ -1,7 +1,8 @@
 package com.hongtu.wf.demo.service;
 
 import com.hongtu.wf.annotation.Service;
-import com.hongtu.wf.demo.helper.DatabaseHelper;
+import com.hongtu.wf.annotation.Transaction;
+import com.hongtu.wf.helper.DatabaseHelper;
 import com.hongtu.wf.demo.model.Customer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -26,14 +27,17 @@ public class CustomerService {
         return DatabaseHelper.queryEntity(Customer.class, sql);
     }
 
+    @Transaction
     public boolean createCustomer(Map<String, Object> fields) {
         return DatabaseHelper.insertEntity(Customer.class, fields);
     }
 
+    @Transaction
     public boolean updateCustomer(Long id, Map<String, Object> fields) {
         return DatabaseHelper.updateEntity(Customer.class, id, fields);
     }
 
+    @Transaction
     public boolean deleteCustomer(Long id) {
         return DatabaseHelper.deleteEntity(Customer.class, id);
     }
